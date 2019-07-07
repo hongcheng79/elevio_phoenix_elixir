@@ -1,0 +1,5 @@
+<h2>Article Details</h2>
+<p>
+<%= raw(@body)%>
+</p>
+<a href="<%= Routes.elevio_path(@conn, :index) %>" class="btn btn-info" role="button">Back</a>

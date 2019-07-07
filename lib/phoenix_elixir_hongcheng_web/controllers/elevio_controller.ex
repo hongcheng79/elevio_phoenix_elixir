@@ -43,4 +43,19 @@ defmodule PhoenixElixirHongchengWeb.ElevioController do
       end
     end
   end
+
+  def details(conn, params) do
+    id = get_in(params, ["id"])
+    {status, result} = ElevioClient.get_article(String.to_integer(id))
+    if status == :ok do
+      Logger.debug "result #{inspect result}"
+      if length(result["article"]["translations"]) > 0 do
+        render(conn, "details.html", body: Enum.at(result["article"]["translations"],0)["body"])
+      else
+        render(conn, "details.html", body: "N/A")
+      end
+    else
+      render(conn, "details.html", body: "N/A")
+    end
+  end
 end

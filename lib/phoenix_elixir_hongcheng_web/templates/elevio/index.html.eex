@@ -12,7 +12,7 @@
   </nav>
   <div>
     <%= for article <- @articles do %>
-        => <%= article["title"] %></br>
+        => <a href="<%= Routes.elevio_path(@conn, :details) %>?id=<%= article["id"] %> "> <%= article["title"] %> </a></br>
     <% end %>
   </div>
   <ul class="pagination">

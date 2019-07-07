@@ -19,6 +19,7 @@ defmodule PhoenixElixirHongchengWeb.Router do
     get "/", PageController, :index
 
     get "/elevio", ElevioController, :index
+    get "/elevio/details", ElevioController, :details
   end
 
   # Other scopes may use custom stacks.
