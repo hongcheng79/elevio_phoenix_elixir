@@ -39,7 +39,7 @@ defmodule ElevioClient do
   end
 
   @doc """
-  Execute the request. See do_request/3.
+  Execute the request by path only. See do_request/2.
   """
   def do_request(path) do
     do_request(path, [])
@@ -53,16 +53,18 @@ defmodule ElevioClient do
     url = construct_url(path, params)
     Logger.debug "url #{inspect url}"
     headers = construct_auth_header()
-    Logger.debug "url #{inspect headers}"
     case HTTPoison.get(url, headers) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        Logger.debug "body #{inspect body}"
         case Poison.decode(body) do
           {:ok, decoded} -> {:ok, decoded}
           {:error, error} -> {:error, error}
         end
       {:ok, %HTTPoison.Response{status_code: status_code}} ->
+        Logger.debug "error code #{inspect status_code}"
         {:error, status_code}
       {:error, error} ->
+        Logger.debug "error #{inspect error}"
         {:error, error}
     end
   end

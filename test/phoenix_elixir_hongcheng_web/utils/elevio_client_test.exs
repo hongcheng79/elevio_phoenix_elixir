@@ -10,8 +10,6 @@ defmodule ElevioClientTest do
   test "get_all_articles" do
     assert {:ok, result} = ElevioClient.get_all_articles(1)
     assert length(result["articles"]) >= 1
-
-    #Logger.debug "result #{inspect Enum.at(result["articles"],0)["id"]}"
   end
 
   test "get_article_invalid" do
@@ -27,8 +25,6 @@ defmodule ElevioClientTest do
 
     # Use the first one to get test the detail
     assert {:ok, _result} = ElevioClient.get_article(id)
-
-    #Logger.debug "result #{inspect _result}"
   end
 
   test "search_article_invalid" do

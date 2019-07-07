@@ -33,6 +33,8 @@ To start your Phoenix server for development:
   * Install Node.js dependencies with `cd assets && npm install`
   * Start Phoenix endpoint with `mix phx.server`
 
+To test `mix test`
+
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser for standard Phoenix page
 Visit [`localhost:4000/elevio`](http://localhost:4000/elevio) for Elevio client interface
 
