@@ -26,7 +26,7 @@ config :phoenix, :json_library, Jason
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
 
-# dev.secret.exs for testing - this file will be ignore in git
+# dev.secret.exs for dev & test - this file will be ignore in git
 dev_secret_path = Path.expand("config/dev.secret.exs")
 if Mix.env in [:dev, :test] do
   if File.exists?(dev_secret_path) do
