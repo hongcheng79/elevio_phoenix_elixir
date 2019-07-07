@@ -24,8 +24,8 @@ defmodule ElevioClient do
   ## Parameters
     - keyword: keyword use for search
   """
-  def search_article(lang \\ "en", keyword) do
-    params = [query: keyword]
+  def search_article(lang \\ "en", page \\ 1, keyword) do
+    params = [query: keyword, page: page]
     do_request(["search", lang], params)
   end
 
