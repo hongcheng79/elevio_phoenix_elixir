@@ -8,7 +8,7 @@ Currently the project contain the following code:
   * lib/phoenix_elixir_hongcheng_web/templates/elevio/index.html.eex (Phoenix template)
   * lib/phoenix_elixir_hongcheng_web/templates/elevio/details.html.eex (Phoenix template)
 
-Unit testing only as follow besides the standard Phoenix template
+Unit testing as follow besides the standard Phoenix template
 
   * test/phoenix_elixir_hongcheng_web/utils/elevio_client_test.exs (Elevio Client test)
 
