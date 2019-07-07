@@ -46,4 +46,4 @@ The production deployment is utilizing docker container with docker compose with
 To generate secret key, execute
   `mix phx.gen.secret`
 
-This ensure all the important keys are no check into git !
+This ensure all the important information are not check into git !
