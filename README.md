@@ -6,6 +6,7 @@ Currently the project contain the following code:
   * lib/phoenix_elixir_hongcheng_web/controllers/elevio_controller.ex (Phoenix controller)
   * lib/phoenix_elixir_hongcheng_web/views/elevio_view.ex (Phoenix view)
   * lib/phoenix_elixir_hongcheng_web/templates/elevio/index.html.eex (Phoenix template)
+  * lib/phoenix_elixir_hongcheng_web/templates/elevio/details.html.eex (Phoenix template)
 
 Unit testing only as follow besides the standard Phoenix template
 
