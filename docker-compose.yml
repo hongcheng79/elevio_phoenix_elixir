@@ -1,0 +1,20 @@
+# Version of docker-compose
+version: '3'
+
+# Containers we are going to run
+services:
+  # Our Phoenix container
+  phoenix:
+    # The build parameters for this container.
+    build:
+      # Here we define that it should build from the current directory
+      context: .
+    environment:
+      # Variables to connect to our Postgres server
+      MIX_ENV: prod
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      ELEVIO_API_KEY: ${ELEVIO_API_KEY}
+      ELEVIO_API_TOKEN: ${ELEVIO_API_TOKEN}
+    ports:
+      # Mapping the port to make the Phoenix app accessible outside of the container
+      - "4000:4000"

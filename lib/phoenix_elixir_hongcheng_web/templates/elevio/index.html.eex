@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Listing articles</h2>
+  <nav class="navbar">
+  <div class="container-fluid">
+    <%= form_for @conn, Routes.elevio_path(@conn, :index), [method: :get, class: "navbar-form navbar-right"], fn f -> %>
+        <div class="form-group">
+            <%= search_input f, :query %>
+        </div>
+        <%= submit "Search", class: "btn btn-default" %>
+    <% end %>
+  </div>
+</nav>
+  <div>
+    <%= for article <- @articles do %>
+        <%= article["title"] %></br>
+    <% end %>
+  </div>
+</div>
