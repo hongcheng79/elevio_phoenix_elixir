@@ -5,7 +5,7 @@ defmodule PhoenixElixirHongchengWeb.ElevioController do
 
   def index(conn, params) do
     search_term = get_in(params, ["query"])
-    Logger.debug "search #{search_term}"
+    Logger.debug "search param : #{search_term}"
 
     if search_term == nil || String.length(search_term) === 0 do
       # Initial first page of all article
